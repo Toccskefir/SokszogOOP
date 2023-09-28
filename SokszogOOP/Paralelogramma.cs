@@ -8,10 +8,10 @@ namespace SokszogOOP
 {
     internal class Paralelogramma : Teglalap
     {
-        private int alfa;
+        private double alfa;
         private static Random rnd = new Random();
 
-        public Paralelogramma(double a, double b, int alfa) : base(a, b)
+        public Paralelogramma(double a, double b, double alfa) : base(a, b)
         {
             this.alfa = alfa;
         }
@@ -21,7 +21,7 @@ namespace SokszogOOP
             this.alfa = rnd.Next(1, 180);
         }
 
-        public int Alfa { get => alfa; set => alfa = value; }
+        public double Alfa { get => alfa; set => alfa = value; }
 
         public override double GetArea()
         {
