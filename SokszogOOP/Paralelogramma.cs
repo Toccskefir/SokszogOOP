@@ -12,6 +12,10 @@ namespace SokszogOOP
 
         public Paralelogramma(double a, double b, double alfa) : base(a, b)
         {
+            if (alfa >= 180)
+            {
+                throw new ArgumentException("Az oldalak által közbezárt szög nem lehet 180°-nál nagyobb", nameof(alfa));
+            }
             this.alfa = alfa;
         }
 
@@ -20,11 +24,22 @@ namespace SokszogOOP
             this.alfa = RandomAngle();
         }
 
-        public double Alfa { get => alfa; set => alfa = value; }
+        public double Alfa
+        {
+            get => alfa;
+            set
+            {
+                if (value >= 180)
+                {
+                    throw new ArgumentException("Az oldalak által közbezárt szög nem lehet 180°-nál nagyobb", nameof(value));
+                }
+                this.alfa = value;
+            }
+        }
 
         public override double GetArea()
         {
-            double radian = this.alfa / 180;
+            double radian = this.alfa / 180 * Math.PI;
             return this.A * this.B * Math.Sin(radian);
         }
 

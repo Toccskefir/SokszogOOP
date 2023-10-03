@@ -16,6 +16,7 @@ namespace SokszogOOP
             Teglalap teglalap2 = new Teglalap(4, 2);
             Paralelogramma paralelogramma1 = new Paralelogramma();
             Paralelogramma paralelogramma2 = new Paralelogramma(10, 15, 60);
+            Sokszogek sokszoglist = new Sokszogek();
 
             Console.WriteLine(haromszog1);
             Console.WriteLine(haromszog2);
@@ -23,6 +24,7 @@ namespace SokszogOOP
             Console.WriteLine(teglalap2);
             Console.WriteLine(paralelogramma1);
             Console.WriteLine(paralelogramma2);
+            Console.WriteLine(sokszoglist);
 
             try
             {
@@ -32,6 +34,16 @@ namespace SokszogOOP
             catch (ArgumentException ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                paralelogramma1.Alfa = 180;
+            }
+            catch (ArgumentException ex)
+            {
+
+                Console.WriteLine(ex.Message); ;
             }
 
             Console.ReadKey();
