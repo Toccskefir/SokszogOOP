@@ -25,6 +25,12 @@ namespace SokszogOOP
             Console.WriteLine(paralelogramma1);
             Console.WriteLine(paralelogramma2);
             Console.WriteLine(sokszoglist);
+            Console.Write("A sokszögek összkerülete: ");
+            Console.WriteLine(sokszoglist.SumPerimeter());
+            Console.Write("A sokszögek összterülete: ");
+            Console.WriteLine(sokszoglist.SumArea());
+            Console.Write("Legnagyobb területtel rendelkező sokszög sorszáma: ");
+            Console.WriteLine(sokszoglist.MaxArea());
 
             try
             {

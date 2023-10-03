@@ -33,13 +33,46 @@ namespace SokszogOOP
             }
         }
 
+        public double SumPerimeter()
+        {
+            double sum = 0;
+            foreach (Sokszog item in list)
+            {
+                sum += item.GetPerimeter();
+            }
+            return sum;
+        }
+
+        public double SumArea()
+        {
+            double sum = 0;
+            foreach (Sokszog item in list)
+            {
+                sum += item.GetArea();
+            }
+            return sum;
+        }
+
+        public int MaxArea()
+        {
+            int maxIndex = 0;
+            for (int i = 1; i < list.Count; i++)
+            {
+                if (list[i].GetArea() > list[maxIndex].GetArea())
+                {
+                    maxIndex = i;
+                }
+            }
+            return maxIndex + 1;
+        }
+
         public override string ToString()
         {
             var sb = new StringBuilder("Sokszögek:");
             foreach (Sokszog item in list)
             {
                 sb.AppendLine();
-                sb.AppendLine($" {item.ToString()}");
+                sb.AppendLine($" {item}");
             }
             return sb.ToString();
         }
