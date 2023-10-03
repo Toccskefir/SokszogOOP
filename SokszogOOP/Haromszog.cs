@@ -10,7 +10,6 @@ namespace SokszogOOP
     {
         private double b;
         private double c;
-        private static Random rnd = new Random();
 
         public Haromszog(double a, double c, double b) : base(a)
         {
@@ -75,10 +74,7 @@ namespace SokszogOOP
                 && this.c + this.b > this.A;
         }
 
-        private static int RandomLength()
-        {
-            return rnd.Next(5, 15);
-        }
+        
 
         public override double GetPerimeter()
         {

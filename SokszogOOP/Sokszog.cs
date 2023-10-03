@@ -9,6 +9,7 @@ namespace SokszogOOP
     internal abstract class Sokszog
     {
         private double a;
+        private static Random rnd = new Random();
 
         public Sokszog(double a)
         {
@@ -20,6 +21,16 @@ namespace SokszogOOP
         public abstract double GetPerimeter();        //absztrakt metódus
 
         public abstract double GetArea();       //absztrakt metódus
+
+        protected static int RandomLength()
+        {
+            return rnd.Next(5, 15);
+        }
+
+        protected static int RandomAngle()
+        {
+            return rnd.Next(1,180);
+        }
 
         public override string ToString()
         {

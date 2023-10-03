@@ -9,16 +9,15 @@ namespace SokszogOOP
     internal class Paralelogramma : Teglalap
     {
         private double alfa;
-        private static Random rnd = new Random();
 
         public Paralelogramma(double a, double b, double alfa) : base(a, b)
         {
             this.alfa = alfa;
         }
 
-        public Paralelogramma() : base(rnd.Next(5,20), rnd.Next(5, 20))
+        public Paralelogramma() : base(RandomLength(), RandomLength())
         {
-            this.alfa = rnd.Next(1, 180);
+            this.alfa = RandomAngle();
         }
 
         public double Alfa { get => alfa; set => alfa = value; }
